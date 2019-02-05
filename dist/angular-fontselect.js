@@ -2,41 +2,1090 @@
 
 require('angular');
 
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var webfontloader = createCommonjsModule(function (module) {
-/* Web Font Loader v1.6.28 - (c) Adobe Systems, Google. License: Apache 2.0 */(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return +new Date};function ca(a,b){this.a=a;this.o=b||a;this.c=this.o.document;}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild);}function v(a){a.parentNode&&a.parentNode.removeChild(a);}
-function w(a,b,c){b=b||[];c=c||[];for(var d=a.className.split(/\s+/),e=0;e<b.length;e+=1){for(var f=!1,g=0;g<d.length;g+=1)if(b[e]===d[g]){f=!0;break}f||d.push(b[e]);}b=[];for(e=0;e<d.length;e+=1){f=!1;for(g=0;g<c.length;g+=1)if(d[e]===c[g]){f=!0;break}f||b.push(d[e]);}a.className=b.join(" ").replace(/\s+/g," ").replace(/^\s+|\s+$/,"");}function y(a,b){for(var c=a.className.split(/\s+/),d=0,e=c.length;d<e;d++)if(c[d]==b)return !0;return !1}
-function ea(a){return a.o.location.hostname||a.a.location.hostname}function z(a,b,c){function d(){m&&e&&f&&(m(g),m=null);}b=t(a,"link",{rel:"stylesheet",href:b,media:"all"});var e=!1,f=!0,g=null,m=c||null;da?(b.onload=function(){e=!0;d();},b.onerror=function(){e=!0;g=Error("Stylesheet failed to load");d();}):setTimeout(function(){e=!0;d();},0);u(a,"head",b);}
-function A(a,b,c,d){var e=a.c.getElementsByTagName("head")[0];if(e){var f=t(a,"script",{src:b}),g=!1;f.onload=f.onreadystatechange=function(){g||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(g=!0,c&&c(null),f.onload=f.onreadystatechange=null,"HEAD"==f.parentNode.tagName&&e.removeChild(f));};e.appendChild(f);setTimeout(function(){g||(g=!0,c&&c(Error("Script load timeout")));},d||5E3);return f}return null}function B(){this.a=0;this.c=null;}function C(a){a.a++;return function(){a.a--;D(a);}}function E(a,b){a.c=b;D(a);}function D(a){0==a.a&&a.c&&(a.c(),a.c=null);}function F(a){this.a=a||"-";}F.prototype.c=function(a){for(var b=[],c=0;c<arguments.length;c++)b.push(arguments[c].replace(/[\W_]+/g,"").toLowerCase());return b.join(this.a)};function G(a,b){this.c=a;this.f=4;this.a="n";var c=(b||"n4").match(/^([nio])([1-9])$/i);c&&(this.a=c[1],this.f=parseInt(c[2],10));}function fa(a){return H(a)+" "+(a.f+"00")+" 300px "+I(a.c)}function I(a){var b=[];a=a.split(/,\s*/);for(var c=0;c<a.length;c++){var d=a[c].replace(/['"]/g,"");-1!=d.indexOf(" ")||/^\d/.test(d)?b.push("'"+d+"'"):b.push(d);}return b.join(",")}function J(a){return a.a+a.f}function H(a){var b="normal";"o"===a.a?b="oblique":"i"===a.a&&(b="italic");return b}
-function ga(a){var b=4,c="n",d=null;a&&((d=a.match(/(normal|oblique|italic)/i))&&d[1]&&(c=d[1].substr(0,1).toLowerCase()),(d=a.match(/([1-9]00|normal|bold)/i))&&d[1]&&(/bold/i.test(d[1])?b=7:/[1-9]00/.test(d[1])&&(b=parseInt(d[1].substr(0,1),10))));return c+b}function ha(a,b){this.c=a;this.f=a.o.document.documentElement;this.h=b;this.a=new F("-");this.j=!1!==b.events;this.g=!1!==b.classes;}function ia(a){a.g&&w(a.f,[a.a.c("wf","loading")]);K(a,"loading");}function L(a){if(a.g){var b=y(a.f,a.a.c("wf","active")),c=[],d=[a.a.c("wf","loading")];b||c.push(a.a.c("wf","inactive"));w(a.f,c,d);}K(a,"inactive");}function K(a,b,c){if(a.j&&a.h[b])if(c)a.h[b](c.c,J(c));else a.h[b]();}function ja(){this.c={};}function ka(a,b,c){var d=[],e;for(e in b)if(b.hasOwnProperty(e)){var f=a.c[e];f&&d.push(f(b[e],c));}return d}function M(a,b){this.c=a;this.f=b;this.a=t(this.c,"span",{"aria-hidden":"true"},this.f);}function N(a){u(a.c,"body",a.a);}function O(a){return "display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:"+I(a.c)+";"+("font-style:"+H(a)+";font-weight:"+(a.f+"00")+";")}function P(a,b,c,d,e,f){this.g=a;this.j=b;this.a=d;this.c=c;this.f=e||3E3;this.h=f||void 0;}P.prototype.start=function(){var a=this.c.o.document,b=this,c=q(),d=new Promise(function(d,e){function f(){q()-c>=b.f?e():a.fonts.load(fa(b.a),b.h).then(function(a){1<=a.length?d():setTimeout(f,25);},function(){e();});}f();}),e=null,f=new Promise(function(a,d){e=setTimeout(d,b.f);});Promise.race([f,d]).then(function(){e&&(clearTimeout(e),e=null);b.g(b.a);},function(){b.j(b.a);});};function Q(a,b,c,d,e,f,g){this.v=a;this.B=b;this.c=c;this.a=d;this.s=g||"BESbswy";this.f={};this.w=e||3E3;this.u=f||null;this.m=this.j=this.h=this.g=null;this.g=new M(this.c,this.s);this.h=new M(this.c,this.s);this.j=new M(this.c,this.s);this.m=new M(this.c,this.s);a=new G(this.a.c+",serif",J(this.a));a=O(a);this.g.a.style.cssText=a;a=new G(this.a.c+",sans-serif",J(this.a));a=O(a);this.h.a.style.cssText=a;a=new G("serif",J(this.a));a=O(a);this.j.a.style.cssText=a;a=new G("sans-serif",J(this.a));a=
-O(a);this.m.a.style.cssText=a;N(this.g);N(this.h);N(this.j);N(this.m);}var R={D:"serif",C:"sans-serif"},S=null;function T(){if(null===S){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent);S=!!a&&(536>parseInt(a[1],10)||536===parseInt(a[1],10)&&11>=parseInt(a[2],10));}return S}Q.prototype.start=function(){this.f.serif=this.j.a.offsetWidth;this.f["sans-serif"]=this.m.a.offsetWidth;this.A=q();U(this);};
-function la(a,b,c){for(var d in R)if(R.hasOwnProperty(d)&&b===a.f[R[d]]&&c===a.f[R[d]])return !0;return !1}function U(a){var b=a.g.a.offsetWidth,c=a.h.a.offsetWidth,d;(d=b===a.f.serif&&c===a.f["sans-serif"])||(d=T()&&la(a,b,c));d?q()-a.A>=a.w?T()&&la(a,b,c)&&(null===a.u||a.u.hasOwnProperty(a.a.c))?V(a,a.v):V(a,a.B):ma(a):V(a,a.v);}function ma(a){setTimeout(p(function(){U(this);},a),50);}function V(a,b){setTimeout(p(function(){v(this.g.a);v(this.h.a);v(this.j.a);v(this.m.a);b(this.a);},a),0);}function W(a,b,c){this.c=a;this.a=b;this.f=0;this.m=this.j=!1;this.s=c;}var X=null;W.prototype.g=function(a){var b=this.a;b.g&&w(b.f,[b.a.c("wf",a.c,J(a).toString(),"active")],[b.a.c("wf",a.c,J(a).toString(),"loading"),b.a.c("wf",a.c,J(a).toString(),"inactive")]);K(b,"fontactive",a);this.m=!0;na(this);};
-W.prototype.h=function(a){var b=this.a;if(b.g){var c=y(b.f,b.a.c("wf",a.c,J(a).toString(),"active")),d=[],e=[b.a.c("wf",a.c,J(a).toString(),"loading")];c||d.push(b.a.c("wf",a.c,J(a).toString(),"inactive"));w(b.f,d,e);}K(b,"fontinactive",a);na(this);};function na(a){0==--a.f&&a.j&&(a.m?(a=a.a,a.g&&w(a.f,[a.a.c("wf","active")],[a.a.c("wf","loading"),a.a.c("wf","inactive")]),K(a,"active")):L(a.a));}function oa(a){this.j=a;this.a=new ja;this.h=0;this.f=this.g=!0;}oa.prototype.load=function(a){this.c=new ca(this.j,a.context||this.j);this.g=!1!==a.events;this.f=!1!==a.classes;pa(this,new ha(this.c,a),a);};
-function qa(a,b,c,d,e){var f=0==--a.h;(a.f||a.g)&&setTimeout(function(){var a=e||null,m=d||null||{};if(0===c.length&&f)L(b.a);else{b.f+=c.length;f&&(b.j=f);var h,l=[];for(h=0;h<c.length;h++){var k=c[h],n=m[k.c],r=b.a,x=k;r.g&&w(r.f,[r.a.c("wf",x.c,J(x).toString(),"loading")]);K(r,"fontloading",x);r=null;if(null===X)if(window.FontFace){var x=/Gecko.*Firefox\/(\d+)/.exec(window.navigator.userAgent),xa=/OS X.*Version\/10\..*Safari/.exec(window.navigator.userAgent)&&/Apple/.exec(window.navigator.vendor);
-X=x?42<parseInt(x[1],10):xa?!1:!0;}else X=!1;X?r=new P(p(b.g,b),p(b.h,b),b.c,k,b.s,n):r=new Q(p(b.g,b),p(b.h,b),b.c,k,b.s,a,n);l.push(r);}for(h=0;h<l.length;h++)l[h].start();}},0);}function pa(a,b,c){var d=[],e=c.timeout;ia(b);var d=ka(a.a,c,a.c),f=new W(a.c,b,e);a.h=d.length;b=0;for(c=d.length;b<c;b++)d[b].load(function(b,d,c){qa(a,f,b,d,c);});}function ra(a,b){this.c=a;this.a=b;}
-ra.prototype.load=function(a){function b(){if(f["__mti_fntLst"+d]){var c=f["__mti_fntLst"+d](),e=[],h;if(c)for(var l=0;l<c.length;l++){var k=c[l].fontfamily;void 0!=c[l].fontStyle&&void 0!=c[l].fontWeight?(h=c[l].fontStyle+c[l].fontWeight,e.push(new G(k,h))):e.push(new G(k));}a(e);}else setTimeout(function(){b();},50);}var c=this,d=c.a.projectId,e=c.a.version;if(d){var f=c.c.o;A(this.c,(c.a.api||"https://fast.fonts.net/jsapi")+"/"+d+".js"+(e?"?v="+e:""),function(e){e?a([]):(f["__MonotypeConfiguration__"+
-d]=function(){return c.a},b());}).id="__MonotypeAPIScript__"+d;}else a([]);};function sa(a,b){this.c=a;this.a=b;}sa.prototype.load=function(a){var b,c,d=this.a.urls||[],e=this.a.families||[],f=this.a.testStrings||{},g=new B;b=0;for(c=d.length;b<c;b++)z(this.c,d[b],C(g));var m=[];b=0;for(c=e.length;b<c;b++)if(d=e[b].split(":"),d[1])for(var h=d[1].split(","),l=0;l<h.length;l+=1)m.push(new G(d[0],h[l]));else m.push(new G(d[0]));E(g,function(){a(m,f);});};function ta(a,b){a?this.c=a:this.c=ua;this.a=[];this.f=[];this.g=b||"";}var ua="https://fonts.googleapis.com/css";function va(a,b){for(var c=b.length,d=0;d<c;d++){var e=b[d].split(":");3==e.length&&a.f.push(e.pop());var f="";2==e.length&&""!=e[1]&&(f=":");a.a.push(e.join(f));}}
-function wa(a){if(0==a.a.length)throw Error("No fonts to load!");if(-1!=a.c.indexOf("kit="))return a.c;for(var b=a.a.length,c=[],d=0;d<b;d++)c.push(a.a[d].replace(/ /g,"+"));b=a.c+"?family="+c.join("%7C");0<a.f.length&&(b+="&subset="+a.f.join(","));0<a.g.length&&(b+="&text="+encodeURIComponent(a.g));return b}function ya(a){this.f=a;this.a=[];this.c={};}
-var za={latin:"BESbswy","latin-ext":"\u00e7\u00f6\u00fc\u011f\u015f",cyrillic:"\u0439\u044f\u0416",greek:"\u03b1\u03b2\u03a3",khmer:"\u1780\u1781\u1782",Hanuman:"\u1780\u1781\u1782"},Aa={thin:"1",extralight:"2","extra-light":"2",ultralight:"2","ultra-light":"2",light:"3",regular:"4",book:"4",medium:"5","semi-bold":"6",semibold:"6","demi-bold":"6",demibold:"6",bold:"7","extra-bold":"8",extrabold:"8","ultra-bold":"8",ultrabold:"8",black:"9",heavy:"9",l:"3",r:"4",b:"7"},Ba={i:"i",italic:"i",n:"n",normal:"n"},
-Ca=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
-function Da(a){for(var b=a.f.length,c=0;c<b;c++){var d=a.f[c].split(":"),e=d[0].replace(/\+/g," "),f=["n4"];if(2<=d.length){var g;var m=d[1];g=[];if(m)for(var m=m.split(","),h=m.length,l=0;l<h;l++){var k;k=m[l];if(k.match(/^[\w-]+$/)){var n=Ca.exec(k.toLowerCase());if(null==n)k="";else{k=n[2];k=null==k||""==k?"n":Ba[k];n=n[1];if(null==n||""==n)n="4";else var r=Aa[n],n=r?r:isNaN(n)?"4":n.substr(0,1);k=[k,n].join("");}}else k="";k&&g.push(k);}0<g.length&&(f=g);3==d.length&&(d=d[2],g=[],d=d?d.split(","):
-g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d));}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<f.length;d+=1)a.a.push(new G(e,f[d]));}}function Ea(a,b){this.c=a;this.a=b;}var Fa={Arimo:!0,Cousine:!0,Tinos:!0};Ea.prototype.load=function(a){var b=new B,c=this.c,d=new ta(this.a.api,this.a.text),e=this.a.families;va(d,e);var f=new ya(e);Da(f);z(c,wa(d),C(b));E(b,function(){a(f.a,f.c,Fa);});};function Ga(a,b){this.c=a;this.a=b;}Ga.prototype.load=function(a){var b=this.a.id,c=this.c.o;b?A(this.c,(this.a.api||"https://use.typekit.net")+"/"+b+".js",function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],m=b[f+1],h=0;h<m.length;h++)e.push(new G(g,m[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0});}catch(l){}a(e);}},2E3):a([]);};function Ha(a,b){this.c=a;this.f=b;this.a=[];}Ha.prototype.load=function(a){var b=this.f.id,c=this.c.o,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,m=c.fonts.length;g<m;++g){var h=c.fonts[g];d.a.push(new G(h.name,ga("font-weight:"+h.weight+";font-style:"+h.style)));}a(d.a);},A(this.c,(this.f.api||"https://f.fontdeck.com/s/css/js/")+ea(this.c)+"/"+b+".js",function(b){b&&a([]);})):a([]);};var Y=new oa(window);Y.a.c.custom=function(a,b){return new sa(b,a)};Y.a.c.fontdeck=function(a,b){return new Ha(b,a)};Y.a.c.monotype=function(a,b){return new ra(b,a)};Y.a.c.typekit=function(a,b){return new Ga(b,a)};Y.a.c.google=function(a,b){return new Ea(b,a)};var Z={load:p(Y.load,Y)};module.exports?module.exports=Z:(window.WebFont=Z,window.WebFontConfig&&Y.load(window.WebFontConfig));}());
-});
-
 /* jshint unused: false */
 
-fontselectModule.constant('jdFontselectConfig', {
+/** @const */
+var PROVIDER_WEBSAFE = 'websafe';
+
+/** @const */
+var PROVIDER_GOOGLE = 'google';
+
+/** @const */
+var PROVIDERS = {};
+PROVIDERS[PROVIDER_WEBSAFE] = true;
+PROVIDERS[PROVIDER_GOOGLE] = true;
+
+/** @const */
+var CATEGORY_SANS_SERIF = 'sansserif';
+
+/** @const */
+var CATEGORY_SERIF = 'serif';
+
+/** @const */
+var CATEGORY_HANDWRITING = 'handwriting';
+
+/** @const */
+var CATEGORY_DISPLAY = 'display';
+
+/** @const */
+var CATEGORY_OTHER = 'other';
+
+/** @const */
+var PAGE_SIZE_DEFAULT = 10;
+
+var NAME_FONTSSERVICE$1 = 'jdFontselectFonts';
+
+/** @const */
+var CLOSE_EVENT = 'jdFontselectEventClose';
+
+/** @const */
+var DO_CLOSE_EVENT = 'jdFontselectEventDoClose';
+
+/** @const */
+var OPEN_EVENT = 'jdFontselectEventOpen';
+
+/** @const */
+var DEFAULT_WEBSAFE_FONTS = [
+  {
+    name: 'Arial',
+    key: 'arial',
+    category: CATEGORY_SANS_SERIF,
+    stack: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
+    popularity: 3,
+    lastModified: '2014-01-28'
+  },
+  {
+    name: 'Consolas',
+    key: 'consolas',
+    category: CATEGORY_SANS_SERIF,
+    stack: 'Consolas, "Lucida Console", Monaco, monospace',
+    popularity: 1,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Courier New',
+    key: 'couriernew',
+    category: CATEGORY_SERIF,
+    stack: '"Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace',
+    popularity: 1,
+    lastModified: '2014-01-28'
+  },
+  {
+    name: 'Georgia',
+    key: 'georgia',
+    category: CATEGORY_SERIF,
+    stack: 'Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif',
+    popularity: 2,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Helvetica',
+    key: 'helvetica',
+    category: CATEGORY_SANS_SERIF,
+    stack: 'Helvetica, "Helvetica Neue", Arial, sans-serif',
+    popularity: 3,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Impact',
+    key: 'impact',
+    category: CATEGORY_DISPLAY,
+    stack: 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
+    popularity: 3,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Lucida Sans',
+    key: 'lucidasans',
+    category: CATEGORY_SANS_SERIF,
+    stack: '"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif',
+    popularity: 3,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Palatino',
+    key: 'palatino',
+    category: CATEGORY_SERIF,
+    stack: 'Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif',
+    popularity: 2,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Tahoma',
+    key: 'tahoma',
+    category: CATEGORY_SANS_SERIF,
+    stack: 'Tahoma, Verdana, Geneva, sans-serif',
+    popularity: 6,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Trebuchet',
+    key: 'trebuchet',
+    category: CATEGORY_SANS_SERIF,
+    stack: '"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif',
+    popularity: 6,
+    lastModified: '2014-02-04'
+  },
+  {
+    name: 'Verdana',
+    key: 'verdana',
+    category: CATEGORY_SANS_SERIF,
+    stack: 'Verdana, Geneva, sans-serif',
+    popularity: 6,
+    lastModified: '2014-01-28'
+  },
+  {
+    name: 'Times New Roman',
+    key: 'timesnewroman',
+    category: CATEGORY_SERIF,
+    stack: 'TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif',
+    popularity: 2,
+    lastModified: '2014-01-28'
+  },
+  {
+    name: 'Brush Script',
+    key: 'brushscript',
+    category: CATEGORY_HANDWRITING,
+    stack: '"Brush Script MT", cursive',
+    popularity: 5,
+    lastModified: '2014-01-29'
+  }
+];
+
+var CATEGORY_OBJECTS = {};
+CATEGORY_OBJECTS[CATEGORY_SANS_SERIF] = {
+  key: CATEGORY_SANS_SERIF,
+  fallback: 'sans-serif'
+};
+CATEGORY_OBJECTS[CATEGORY_SERIF] = {
+  key: CATEGORY_SERIF,
+  fallback: 'serif'
+};
+CATEGORY_OBJECTS[CATEGORY_HANDWRITING] = {
+  key: CATEGORY_HANDWRITING,
+  fallback: 'cursive'
+};
+CATEGORY_OBJECTS[CATEGORY_DISPLAY] = {
+  key: CATEGORY_DISPLAY,
+  fallback: 'fantasy'
+};
+CATEGORY_OBJECTS[CATEGORY_OTHER] = {
+  key: CATEGORY_OTHER,
+  fallback: 'sans-serif'
+};
+
+/** @const */
+var DEFAULT_CATEGORIES = [
+  CATEGORY_OBJECTS[CATEGORY_SANS_SERIF],
+  CATEGORY_OBJECTS[CATEGORY_SERIF],
+  CATEGORY_OBJECTS[CATEGORY_HANDWRITING],
+  CATEGORY_OBJECTS[CATEGORY_DISPLAY],
+  CATEGORY_OBJECTS[CATEGORY_OTHER]
+];
+
+/** @const */
+var DIRECTION_NEXT = 'next';
+
+/** @const */
+var DIRECTION_PREVIOUS = 'prev';
+
+/** @const */
+var REQUIRED_FONT_OBJECT_KEYS = [
+  'name',
+  'key',
+  'stack'
+];
+
+/** @const */
+var METHOD_GET = 'get';
+
+/** @const */
+var URL_GOOGLE_FONTS_API = 'https://www.googleapis.com/webfonts/v1/webfonts';
+
+/** @const */
+var URL_GOOGLE_FONTS_CSS = 'https://fonts.googleapis.com/css';
+
+/** @const */
+var SUBSET_CYRILLIC = 'cyrillic';
+
+/** @const */
+var SUBSET_CYRILLIC_EXT = 'cyrillic-ext';
+
+/** @const */
+var SUBSET_GREEK = 'greek';
+
+/** @const */
+var SUBSET_GREEK_EXT = 'greek-ext';
+
+/** @const */
+var SUBSET_LATIN = 'latin';
+
+/** @const */
+var SUBSET_LATIN_EXT = 'latin-ext';
+
+/** @const */
+var SUBSET_VIETNAMESE = 'vietnamese';
+
+/** @const */
+var SUBSET_PRIORITY = [
+  SUBSET_LATIN,
+  SUBSET_LATIN_EXT,
+  SUBSET_GREEK,
+  SUBSET_GREEK_EXT,
+  SUBSET_CYRILLIC,
+  SUBSET_CYRILLIC_EXT,
+  SUBSET_VIETNAMESE
+];
+
+/** @const */
+var VALUE_NO_FONT_STACK = false;
+
+/** @const */
+var VARIANTS_REGULAR = ['regular', '400', '300', '500'];
+
+/** @const */
+var VARIANTS_LIGHT = ['light', '100', '200'];
+
+/** @const */
+var VARIANTS_BOLD = ['bold', '600', '700', '800', '900'];
+
+/** @const */
+var VARIANTS_ITALIC = ['italic', '400italic', '300italic', '500italic'];
+
+/** @const */
+var VARIANTS_LIGHT_ITALIC = ['lightitalic', '100italic', '200italic'];
+
+/** @const */
+var VARIANTS_BOLD_ITALIC = ['bolditalic', '600italic', '700italic', '800italic', '900italic'];
+
+/** @const */
+var VARIANT_PRIORITY = VARIANTS_REGULAR.concat(
+  VARIANTS_LIGHT,
+  VARIANTS_BOLD,
+  VARIANTS_ITALIC,
+  VARIANTS_LIGHT_ITALIC,
+  VARIANTS_BOLD_ITALIC
+);
+
+/** @const */
+var KEY_ESCAPE = 27;
+
+/** @const */
+var KEY_UP = 38;
+
+/** @const */
+var KEY_DOWN = 40;
+
+/** @const */
+var KEY_LEFT = 37;
+
+/** @const */
+var KEY_RIGHT = 39;
+
+/** @const */
+var SCROLL_BUFFER = 30;
+
+/** @const */
+var SORT_ATTRIBUTES = [
+  {
+    key: 'name',
+    dir: false
+  },
+  {
+    key: 'popularity',
+    dir: true
+  },
+  {
+    key: 'lastModified',
+    dir: true
+  }
+];
+
+/** @const */
+var STATE_DEFAULTS = {
+  sort: {
+    attr: undefined,
+    direction: true
+  },
+  providers: PROVIDERS,
+  category: undefined,
+  font: undefined,
+  search: '',
+  subsets: {
+    latin: true
+  }
+};
+
+/** @const */
+var TEXT_DEFAULTS = {
+  toggleOpenLabel: 'open',
+  toggleCloseLabel: 'close',
+  searchToggleLabel: 'Search',
+  search: 'Search by Fontname',
+  toggleSearchLabel: 'Choose Font',
+  providerLabel: 'Providers',
+  subsetLabel: 'Subsets',
+  styleLabel: 'Categories',
+  settingsLabel: 'Settings',
+  noResultsLabel: 'No Fonts found.',
+  pageLabel: 'Page: ',
+  fontFabel: 'Fonts: ',
+  closeButton: 'Close',
+  allFontsListHeadline: 'All Fonts',
+  curatedFontsListHeadline: 'Curated Fonts',
+  page: {
+    prev: '▲',
+    next: '▼'
+  },
+  provider: {
+    websafe: 'Websafe Fonts',
+    google: 'Google Fonts'
+  },
+  category: {
+    serif: 'Serif',
+    sansserif: 'Sans Serif',
+    display: 'Display',
+    handwriting: 'Handwriting',
+    other: 'Other'
+  },
+  subset: {
+    cyrillic: 'Cyrillic',
+    'cyrillic-ext': 'Cyrillic Extended',
+    greek: 'Greek',
+    'greek-ext': 'Greek Extended',
+    latin: 'Latin',
+    'latin-ext': 'Latin Extended',
+    vietnamese: 'Vietnamese',
+    devanagari: 'Devanagari',
+    khmer: 'Khmer'
+  },
+  sort: {
+    popularity: 'Popularity',
+    name: 'Alphabet',
+    lastModified: 'Latest'
+  },
+  sortdir: {
+    desc: '▼',
+    asc: '▲'
+  }
+};
+
+var jdFontselectConfig = {
   googleApiKey: window._jdFontselectGoogleApiKey || false
-});
+};
+
+var FONTLIST_ENTRY_TYPE_HEADLINE = 'HEADLINE';
+var FONTLIST_ENTRY_TYPE_FONT = 'FONT';
+var FONTLIST_ENTRY_TYPE_TEXT = 'TEXT';
+
+/* globals CATEGORY_HANDWRITING, CATEGORY_SANS_SERIF, CATEGORY_DISPLAY, CATEGORY_SERIF */
+
+var GOOGLE_FONT_CATEGORIES = {};
+GOOGLE_FONT_CATEGORIES[CATEGORY_HANDWRITING] = [
+    'Patrick Hand SC',
+    'Grand Hotel',
+    'Calligraffitti',
+    'Coming Soon',
+    'Crafty Girls',
+    'Homemade Apple',
+    'Just Another Hand',
+    'Montez',
+    'Permanent Marker',
+    'Rancho',
+    'Redressed',
+    'Rochester',
+    'Rock Salt',
+    'Satisfy',
+    'Schoolbell',
+    'Sunshiney',
+    'Walter Turncoat',
+    'Yellowtail',
+    'Aguafina Script',
+    'Aladin',
+    'Alex Brush',
+    'Allura',
+    'Amatic SC',
+    'Annie Use Your Telescope',
+    'Architects Daughter',
+    'Arizonia',
+    'Bad Script',
+    'Berkshire Swash',
+    'Bilbo',
+    'Bilbo Swash Caps',
+    'Bonbon',
+    'Butterfly Kids',
+    'Cedarville Cursive',
+    'Clicker Script',
+    'Condiment',
+    'Cookie',
+    'Courgette',
+    'Covered By Your Grace',
+    'Damion',
+    'Dancing Script',
+    'Dawning of a New Day',
+    'Delius',
+    'Delius Swash Caps',
+    'Delius Unicase',
+    'Devonshire',
+    'Dr Sugiyama',
+    'Eagle Lake',
+    'Engagement',
+    'Euphoria Script',
+    'Felipa',
+    'Fondamento',
+    'Give You Glory',
+    'Gloria Hallelujah',
+    'Gochi Hand',
+    'Great Vibes',
+    'Handlee',
+    'Herr Von Muellerhoff',
+    'Indie Flower',
+    'Italianno',
+    'Jim Nightshade',
+    'Julee',
+    'Just Me Again Down Here',
+    'Kaushan Script',
+    'Kristi',
+    'La Belle Aurore',
+    'League Script',
+    'Leckerli One',
+    'Loved by the King',
+    'Lovers Quarrel',
+    'Marck Script',
+    'Meddon',
+    'Meie Script',
+    'Merienda',
+    'Merienda One',
+    'Mervale Script',
+    'Miama',
+    'Miss Fajardose',
+    'Miss Saint Delafield',
+    'Molle',
+    'Monsieur La Doulaise',
+    'Mr Bedford',
+    'Mr Bedfort',
+    'Mr Dafoe',
+    'Mr De Haviland',
+    'Mrs Saint Delafield',
+    'Mrs Sheppards',
+    'Neucha',
+    'Niconne',
+    'Norican',
+    'Nothing You Could Do',
+    'Over the Rainbow',
+    'Pacifico',
+    'Parisienne',
+    'Patrick Hand',
+    'Pecita',
+    'Petit Formal Script',
+    'Pinyon Script',
+    'Princess Sofia',
+    'Quintessential',
+    'Qwigley',
+    'Reenie Beanie',
+    'Romanesco',
+    'Rouge Script',
+    'Ruge Boogie',
+    'Ruthie',
+    'Sacramento',
+    'Shadows Into Light',
+    'Shadows Into Light Two',
+    'Short Stack',
+    'Sofia',
+    'Stalemate',
+    'Sue Ellen Francisco',
+    'Swanky and Moo Moo',
+    'Tangerine',
+    'The Girl Next Door',
+    'Vibur',
+    'Waiting for the Sunrise',
+    'Yesteryear',
+    'Zeyada',
+    'Domine',
+    'Donegal One'
+];
+GOOGLE_FONT_CATEGORIES[CATEGORY_SANS_SERIF] = [
+    'Wendy One',
+    'Tauri',
+    'Sintony',
+    'Pathway Gothic One',
+    'Noto Sans',
+    'Monda',
+    'Merriweather Sans',
+    'Exo 2',
+    'Aclonica',
+    'Alef',
+    'Alegreya Sans',
+    'Alegreya Sans SC',
+    'Denk One',
+    'Droid Sans',
+    'Droid Sans Mono',
+    'Open Sans',
+    'Open Sans Condensed',
+    'Roboto',
+    'Roboto Condensed',
+    'Syncopate',
+    'ABeeZee',
+    'Abel',
+    'Acme',
+    'Actor',
+    'Advent Pro',
+    'Aldrich',
+    'Allerta',
+    'Allerta Stencil',
+    'Amaranth',
+    'Anaheim',
+    'Andika',
+    'Anonymous Pro',
+    'Antic',
+    'Anton',
+    'Archivo Black',
+    'Archivo Narrow',
+    'Arimo',
+    'Armata',
+    'Asap',
+    'Asul',
+    'Average Sans',
+    'Basic',
+    'Belleza',
+    'BenchNine',
+    'Bubbler One',
+    'Cabin',
+    'Cabin Condensed',
+    'Cagliostro',
+    'Candal',
+    'Cantarell',
+    'Cantora One',
+    'Capriola',
+    'Carme',
+    'Carrois Gothic',
+    'Carrois Gothic SC',
+    'Changa',
+    'Chau Philomene One',
+    'Chivo',
+    'Coda Caption',
+    'Convergence',
+    'Cousine',
+    'Cuprum',
+    'Days One',
+    'Didact Gothic',
+    'Doppio One',
+    'Dorsa',
+    'Dosis',
+    'Duru Sans',
+    'Economica',
+    'Electrolize',
+    'Englebert',
+    'Exo',
+    'Federo',
+    'Fjalla One',
+    'Francois One',
+    'Fresca',
+    'Gafata',
+    'Galdeano',
+    'Geo',
+    'Gudea',
+    'Hammersmith One',
+    'Hermeneus One',
+    'Homenaje',
+    'Imprima',
+    'Inconsolata',
+    'Inder',
+    'Istok Web',
+    'Jockey One',
+    'Josefin Sans',
+    'Josefin Sans Std Light',
+    'Julius Sans One',
+    'Jura',
+    'Karla',
+    'Kite One',
+    'Krona One',
+    'Lato',
+    'Lekton',
+    'Magra',
+    'Mako',
+    'Marmelad',
+    'Marvel',
+    'Maven Pro',
+    'Merge One',
+    'Metrophobic',
+    'Michroma',
+    'Molengo',
+    'Montserrat',
+    'Montserrat Alternates',
+    'Montserrat Subrayada',
+    'Mouse Memoirs',
+    'Muli',
+    'News Cycle',
+    'Nobile',
+    'Numans',
+    'Nunito',
+    'Orbitron',
+    'Orienta',
+    'Oswald',
+    'Oxygen',
+    'Oxygen Mono',
+    'Paytone One',
+    'Philosopher',
+    'Play',
+    'Pontano Sans',
+    'Port Lligat Sans',
+    'PT Mono',
+    'PT Sans',
+    'PT Sans Caption',
+    'PT Sans Narrow',
+    'Puritan',
+    'Quantico',
+    'Quattrocento Sans',
+    'Questrial',
+    'Quicksand',
+    'Raleway',
+    'Rambla',
+    'Rationale',
+    'Ropa Sans',
+    'Rosario',
+    'Ruda',
+    'Ruluko',
+    'Rum Raisin',
+    'Russo One',
+    'Sansation',
+    'Scada',
+    'Seymour One',
+    'Shanti',
+    'Share Tech',
+    'Share Tech Mono',
+    'Signika',
+    'Signika Negative',
+    'Six Caps',
+    'Snippet',
+    'Source Code Pro',
+    'Source Sans Pro',
+    'Spinnaker',
+    'Strait',
+    'Strong',
+    'Telex',
+    'Tenor Sans',
+    'Terminal Dosis',
+    'Terminal Dosis Light',
+    'Text Me One',
+    'Titillium Web',
+    'Tuffy',
+    'Varela',
+    'Varela Round',
+    'Viga',
+    'Voltaire',
+    'Wire One',
+    'Yanone Kaffeesatz',
+    'Ubuntu',
+    'Ubuntu Condensed',
+    'Ubuntu Mono'
+];
+GOOGLE_FONT_CATEGORIES[CATEGORY_DISPLAY] = [
+    'Rubik One',
+    'Rubik Mono One',
+    'Vampiro One',
+    'Snowburst One',
+    'Purple Purse',
+    'New Rocker',
+    'Milonga',
+    'Margarine',
+    'Lily Script One',
+    'Kavoon',
+    'Hanalei',
+    'Hanalei Fill',
+    'Fruktur',
+    'Freckle Face',
+    'Elsie',
+    'Elsie Swash Caps',
+    'Cherry Cream Soda',
+    'Chewy',
+    'Creepster Caps',
+    'Crushed',
+    'Fontdiner Swanky',
+    'Irish Grover',
+    'Irish Growler',
+    'Kranky',
+    'Luckiest Guy',
+    'Maiden Orange',
+    'Mountains of Christmas',
+    'Slackey',
+    'Smokum',
+    'Special Elite',
+    'Unkempt',
+    'Abril Fatface',
+    'Akronim',
+    'Alfa Slab One',
+    'Allan',
+    'Almendra Display',
+    'Amarante',
+    'Arbutus',
+    'Asset',
+    'Astloch',
+    'Atomic Age',
+    'Aubrey',
+    'Audiowide',
+    'Autour One',
+    'Averia Gruesa Libre',
+    'Averia Libre',
+    'Averia Sans Libre',
+    'Averia Serif Libre',
+    'Bangers',
+    'Baumans',
+    'Bevan',
+    'Bigelow Rules',
+    'Bigshot One',
+    'Black Ops One',
+    'Boogaloo',
+    'Bowlby One',
+    'Bowlby One SC',
+    'Bubblegum Sans',
+    'Buda',
+    'Butcherman',
+    'Butcherman Caps',
+    'Cabin Sketch',
+    'Caesar Dressing',
+    'Carter One',
+    'Ceviche One',
+    'Changa One',
+    'Chango',
+    'Chela One',
+    'Chelsea Market',
+    'Cherry Swash',
+    'Chicle',
+    'Cinzel Decorative',
+    'Clara',
+    'Coda',
+    'Codystar',
+    'Combo',
+    'Comfortaa',
+    'Concert One',
+    'Contrail One',
+    'Corben',
+    'Creepster',
+    'Croissant One',
+    'Diplomata',
+    'Diplomata SC',
+    'Dynalight',
+    'Eater',
+    'Eater Caps',
+    'Emblema One',
+    'Emilys Candy',
+    'Erica One',
+    'Ewert',
+    'Expletus Sans',
+    'Fascinate',
+    'Fascinate Inline',
+    'Faster One',
+    'Federant',
+    'Finger Paint',
+    'Flamenco',
+    'Flavors',
+    'Forum',
+    'Fredericka the Great',
+    'Fredoka One',
+    'Frijole',
+    'Fugaz One',
+    'Galindo',
+    'Geostar',
+    'Geostar Fill',
+    'Germania One',
+    'Glass Antiqua',
+    'Goblin One',
+    'Gorditas',
+    'Graduate',
+    'Gravitas One',
+    'Griffy',
+    'Gruppo',
+    'Happy Monkey',
+    'Henny Penny',
+    'Iceberg',
+    'Iceland',
+    'Jacques Francois Shadow',
+    'Jolly Lodger',
+    'Joti One',
+    'Keania One',
+    'Kelly Slab',
+    'Kenia',
+    'Knewave',
+    'Lancelot',
+    'Lemon',
+    'Lemon One',
+    'Life Savers',
+    'Lilita One',
+    'Limelight',
+    'Lobster',
+    'Lobster Two',
+    'Londrina Outline',
+    'Londrina Shadow',
+    'Londrina Sketch',
+    'Londrina Solid',
+    'Love Ya Like A Sister',
+    'Macondo',
+    'Macondo Swash Caps',
+    'McLaren',
+    'MedievalSharp',
+    'Medula One',
+    'Megrim',
+    'Metal Mania',
+    'Metamorphous',
+    'Miltonian',
+    'Miltonian Tattoo',
+    'Miniver',
+    'Modern Antiqua',
+    'Monofett',
+    'Monoton',
+    'Mystery Quest',
+    'Nixie One',
+    'Nosifer',
+    'Nosifer Caps',
+    'Nova Cut',
+    'Nova Flat',
+    'Nova Mono',
+    'Nova Oval',
+    'Nova Round',
+    'Nova Script',
+    'Nova Slim',
+    'Nova Square',
+    'Offside',
+    'Oldenburg',
+    'Oleo Script',
+    'Oleo Script Swash Caps',
+    'Oregano',
+    'Original Surfer',
+    'Overlock',
+    'Overlock SC',
+    'Paprika',
+    'Passero One',
+    'Passion One',
+    'Patua One',
+    'Peralta',
+    'Piedra',
+    'Pirata One',
+    'Plaster',
+    'Playball',
+    'Poetsen One',
+    'Poiret One',
+    'Poller One',
+    'Pompiere',
+    'Press Start 2P',
+    'Prosto One',
+    'Racing Sans One',
+    'Raleway Dots',
+    'Rammetto One',
+    'Ranchers',
+    'Revalia',
+    'Ribeye',
+    'Ribeye Marrow',
+    'Righteous',
+    'Risque',
+    'Ruslan Display',
+    'Rye',
+    'Sail',
+    'Salsa',
+    'Sancreek',
+    'Sansita One',
+    'Sarina',
+    'Seaweed Script',
+    'Sevillana',
+    'Share',
+    'Shojumaru',
+    'Sigmar One',
+    'Simonetta',
+    'Sirin Stencil',
+    'Skranji',
+    'Smythe',
+    'Sniglet',
+    'Sofadi One',
+    'Sonsie One',
+    'Spicy Rice',
+    'Spirax',
+    'Squada One',
+    'Stalinist One',
+    'Stalin One',
+    'Stardos Stencil',
+    'Stint Ultra Condensed',
+    'Stint Ultra Expanded',
+    'Supermercado One',
+    'Titan One',
+    'Trade Winds',
+    'Trochut',
+    'Tulpen One',
+    'Uncial Antiqua',
+    'Underdog',
+    'Unica One',
+    'UnifrakturCook',
+    'UnifrakturMaguntia',
+    'Unlock',
+    'Vast Shadow',
+    'Voces',
+    'VT323',
+    'Wallpoet',
+    'Warnes',
+    'Wellfleet',
+    'Yeseva One'
+];
+GOOGLE_FONT_CATEGORIES[CATEGORY_SERIF] = [
+    'Roboto Slab',
+    'Noto Serif',
+    'Libre Baskerville',
+    'Gabriela',
+    'Fauna One',
+    'Droid Serif',
+    'jsMath cmbx10',
+    'jsMath cmex10',
+    'jsMath cmmi10',
+    'jsMath cmr10',
+    'jsMath cmsy10',
+    'jsMath cmti10',
+    'Ultra',
+    'Adamina',
+    'Alegreya',
+    'Alegreya SC',
+    'Alice',
+    'Alike',
+    'Alike Angular',
+    'Almendra',
+    'Almendra SC',
+    'Amethysta',
+    'Amiri',
+    'Andada',
+    'Andada SC',
+    'Antic Didone',
+    'Antic Slab',
+    'Arapey',
+    'Arbutus Slab',
+    'Artifika',
+    'Arvo',
+    'Average',
+    'Balthazar',
+    'Belgrano',
+    'Bentham',
+    'Bitter',
+    'Brawler',
+    'Bree Serif',
+    'Buenard',
+    'Cambo',
+    'Cantata One',
+    'Cardo',
+    'Caudex',
+    'Cinzel',
+    'Copse',
+    'Coustard',
+    'Crete Round',
+    'Crimson Text',
+    'Cutive',
+    'Cutive Mono',
+    'Della Respira',
+    'EB Garamond',
+    'Enriqueta',
+    'Esteban',
+    'Fanwood Text',
+    'Fenix',
+    'Fjord One',
+    'Gentium Basic',
+    'Gentium Book Basic',
+    'Gilda Display',
+    'Glegoo',
+    'Goudy Bookletter 1911',
+    'Habibi',
+    'Headland One',
+    'Holtwood One SC',
+    'IM Fell Double Pica',
+    'IM Fell Double Pica SC',
+    'IM Fell DW Pica',
+    'IM Fell DW Pica SC',
+    'IM Fell English',
+    'IM Fell English SC',
+    'IM Fell French Canon',
+    'IM Fell French Canon SC',
+    'IM Fell Great Primer',
+    'IM Fell Great Primer SC',
+    'Inika',
+    'Italiana',
+    'Jacques Francois',
+    'Josefin Slab',
+    'Judson',
+    'Junge',
+    'Kameron',
+    'Kotta One',
+    'Kreon',
+    'Ledger',
+    'Linden Hill',
+    'Lora',
+    'Lusitana',
+    'Lustria',
+    'Marcellus',
+    'Marcellus SC',
+    'Marko One',
+    'Mate',
+    'Mate SC',
+    'Merriweather',
+    'Montaga',
+    'Neuton',
+    'Noticia Text',
+    'OFL Sorts Mill Goudy TT',
+    'Old Standard TT',
+    'Oranienbaum',
+    'Ovo',
+    'Petrona',
+    'Playfair Display',
+    'Playfair Display SC',
+    'Podkova',
+    'Poly',
+    'Port Lligat Slab',
+    'Prata',
+    'Prociono',
+    'PT Serif',
+    'PT Serif Caption',
+    'Quando',
+    'Quattrocento',
+    'Radley',
+    'Rokkitt',
+    'Rosarivo',
+    'Rufina',
+    'Sanchez',
+    'Sedan',
+    'Sedan SC',
+    'Sorts Mill Goudy',
+    'Stoke',
+    'Tienne',
+    'Tinos',
+    'Trocchi',
+    'Trykker',
+    'Unna',
+    'Vidaloka',
+    'Volkhov',
+    'Vollkorn'
+];
+GOOGLE_FONT_CATEGORIES[CATEGORY_OTHER] = [
+    'Angkor',
+    'Battambang',
+    'Bayon',
+    'Bokor',
+    'Chenla',
+    'Content',
+    'Dangrek',
+    'Fasthand',
+    'Freehand',
+    'GFS Didot',
+    'GFS Neohellenic',
+    'Hanuman',
+    'Kantumruy',
+    'Kdam Thmor',
+    'Khmer',
+    'Koulen',
+    'Metal',
+    'Moul',
+    'Moulpali',
+    'Nokora',
+    'Odor Mean Chey',
+    'Preahvihear',
+    'Siemreap',
+    'Suwannaphum',
+    'Taprom'
+];
 
 /* global DEFAULT_WEBSAFE_FONTS, PROVIDER_WEBSAFE, PROVIDER_GOOGLE, REQUIRED_FONT_OBJECT_KEYS */
-/* global GOOGLE_FONT_CATEGORIES, NAME_FONTSSERVICE, DEFAULT_CATEGORIES, URL_GOOGLE_FONTS_CSS */
-/* global VARIANT_PRIORITY, SUBSET_PRIORITY, METHOD_GET, URL_GOOGLE_FONTS_API  */
-/* global STATE_DEFAULTS, CATEGORY_OTHER, CATEGORY_OBJECTS  */
-
 var _fontsServiceDeps = ['$http', '$q', 'jdFontselectConfig', '$filter', 'jdfsWebFont'];
 
 var _googleFontsInitiated = false;
@@ -653,7 +1702,7 @@ FontsService.prototype = {
       var ready = amount - 1;
       var fonts = [];
 
-      angular.forEach(response.items, function(font, i) {
+      angular.forEach(response.data.items, function(font, i) {
         var category = self._getGoogleFontCat(font.family);
 
         fonts.push(self.add({
@@ -720,6 +1769,7 @@ FontsService.prototype = {
 };
 
 /* global NAME_FONTSSERVICE */
+
 function jdfsCuratedFontsProvider() {
   var curatedFontKeys = [];
 
@@ -735,14 +1785,12 @@ function jdfsCuratedFontsProvider() {
     });
   }
 
-  this.$get = [NAME_FONTSSERVICE, function jdfsCuratedFontsFactory(fontService) {
+  this.$get = [NAME_FONTSSERVICE$1, function jdfsCuratedFontsFactory(fontService) {
     return getCuratedFontObjects(fontService.getAllFonts(), curatedFontKeys);
   }];
 }
 
 /* jshint unused: false */
-
-/* globals CATEGORY_HANDWRITING, CATEGORY_SANS_SERIF, CATEGORY_DISPLAY, CATEGORY_SERIF */
 
 /* From: http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/ */
 function startFromFilter () {
@@ -1188,6 +2236,7 @@ function jdFontSelectDirective (fontsService) {
           $scope.name = '';
           $scope.stack = VALUE_NO_FONT_STACK;
         }
+        close();
       };
 
       $scope.toggleSettings = function() {
@@ -1286,9 +2335,9 @@ function jdFontSelectDirective (fontsService) {
       });
     }]
   };
-}jdFontSelectDirective.$inject = [NAME_FONTSSERVICE];
+}jdFontSelectDirective.$inject = [NAME_FONTSSERVICE$1];
 
-var template$1 = "<div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\"> <button class=\"jdfs-fontpagination jdfs-fontpagination-prev\" ng-click=\"paginate('prev', $event)\" ng-class=\"{'jdfs-disabled': !paginationButtonActive('prev')}\" ng-disabled=\"!paginationButtonActive('prev')\">{{text.page.prev}}</button> <ul class=\"jdfs-fontlist\"> <jd-fontlist-entry current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | startFrom: page.current * page.size | limitTo: page.size\"></jd-fontlist-entry> </ul> <button class=\"jdfs-fontpagination jdfs-fontpagination-next\" ng-click=\"paginate('next', $event)\" ng-class=\"{'jdfs-disabled': !paginationButtonActive('next')}\" ng-disabled=\"!paginationButtonActive('next')\">{{text.page.next}} </button> </div> ";
+var template$1 = "<div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\"> <ul class=\"jdfs-fontlist font-selector-list\"> <jd-fontlist-entry class=\"font-selector-item\" current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | limitTo:50 track by $index\"></jd-fontlist-entry> </ul> </div> <!-- <div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\">\n\t\t<button\n\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-prev\"\n\t\t\tng-click=\"paginate('prev', $event)\"\n\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('prev')}\"\n\t\t\tng-disabled=\"!paginationButtonActive('prev')\"\n\t\t>{{text.page.prev}}</button>\n\t\t<ul class='jdfs-fontlist'>\n\t\t\t<jd-fontlist-entry current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | startFrom: page.current * page.size | limitTo: page.size\"></jd-fontlist-entry>\n\t\t</ul>\n\n\t\t<button\n\t\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-next\"\n\t\t\t\tng-click=\"paginate('next', $event)\"\n\t\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('next')}\"\n\t\t\t\tng-disabled=\"!paginationButtonActive('next')\"\n\t\t\t>{{text.page.next}}\n\t\t</button>\n</div> --> ";
 
 /* global NAME_CONTROLLER, DIRECTION_NEXT, DIRECTION_PREVIOUS, KEY_DOWN */
 var NAME_JDFONTLIST = 'jdFontlist';
@@ -1809,7 +2858,7 @@ function jdFontlistController($scope, $rootScope, $filter, fontsService, $elemen
     $scope.setCurrentPage(0);
   }
 }
-jdFontlistController.$inject = ['$scope', '$rootScope', '$filter', NAME_FONTSSERVICE, '$element', '$document', 'jdfsCuratedFonts'];
+jdFontlistController.$inject = ['$scope', '$rootScope', '$filter', NAME_FONTSSERVICE$1, '$element', '$document', 'jdfsCuratedFonts'];
 
 function jdFontlistDirective () {
   return {
@@ -1827,7 +2876,7 @@ function jdFontlistDirective () {
   };
 }
 
-var template$2 = "<ng-switch on=\"entry.type\"> <li ng-switch-when=\"FONT\"><jd-font current=\"current\" font=\"entry.content\"></jd-font></li> <li ng-switch-when=\"HEADLINE\" class=\"jdfs-fontlist-headline\">{{entry.content}}</li> <li ng-switch-when=\"TEXT\" class=\"jdfs-fontlist-text\">{{entry.content}}</li> </ng-switch> ";
+var template$2 = "<ng-switch on=\"entry.type\"> <li ng-switch-when=\"FONT\"> <jd-font current=\"current\" font=\"entry.content\"></jd-font> </li> <li ng-switch-when=\"TEXT\"> <div class=\"jdfs-fontlist-text\">{{entry.content}}</div> </li> </ng-switch> ";
 
 /* global FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_FONT, FONTLIST_ENTRY_TYPE_TEXT */
 var NAME_JDFONTLIST_ENTRY = 'jdFontlistEntry';
@@ -1867,7 +2916,7 @@ function jdFontDirective (fontsService) {
     }]
   };
 }
-jdFontDirective.$inject = [NAME_FONTSSERVICE];
+jdFontDirective.$inject = [NAME_FONTSSERVICE$1];
 
 var template$4 = "<link ng-href=\"{{url}}\" ng-repeat=\"url in urls\"> ";
 
@@ -1883,13 +2932,14 @@ function jdFontSelectCurrentHrefDirective (fontsService) {
     }]
   };
 }
-jdFontselectCurrentHref.$inject = [NAME_FONTSSERVICE];
+jdFontselectCurrentHref.$inject = [NAME_FONTSSERVICE$1];
 
 /* jshint unused: false, -W079 */
 
-var fontselectModule$1 = angular.module('jdFontselect', [])
+var fontselectModule = angular.module('jdFontselect', [])
                               .provider('jdfsCuratedFonts', jdfsCuratedFontsProvider)
                               .factory('jdfsWebFont', jdfsWebFontFactory)
+                              .constant('jdFontselectConfig', jdFontselectConfig)
                               .service(NAME_FONTSSERVICE, FontsService)
                               .filter('startFrom', startFromFilter)
                               .filter('stackSearch', stackSeachFilter)

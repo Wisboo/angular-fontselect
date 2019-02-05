@@ -1,8 +1,7 @@
 /* jshint unused: false, -W079 */
 import 'angular';
-import 'webfontloader';
 import '../less/fontselect.less';
-import './helper.defaults.js';
+import { jdFontselectConfig } from './helper.defaults.js';
 import { FontsService } from './service.fonts.js';
 import { jdfsCuratedFontsProvider } from './provider.curatedFonts.js';
 import './helper.functions.js';
@@ -22,6 +21,7 @@ import { jdFontSelectCurrentHrefDirective } from './directive.current-href.js';
 var fontselectModule = angular.module('jdFontselect', [])
                               .provider('jdfsCuratedFonts', jdfsCuratedFontsProvider)
                               .factory('jdfsWebFont', jdfsWebFontFactory)
+                              .constant('jdFontselectConfig', jdFontselectConfig)
                               .service(NAME_FONTSSERVICE, FontsService)
                               .filter('startFrom', startFromFilter)
                               .filter('stackSearch', stackSeachFilter)

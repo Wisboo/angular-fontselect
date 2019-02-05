@@ -1,6 +1,7 @@
 /* global FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_FONT, FONTLIST_ENTRY_TYPE_TEXT */
 var NAME_JDFONTLIST_ENTRY = 'jdFontlistEntry';
 import template from '../partials/fontlist-entry.html';
+import { FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_FONT, FONTLIST_ENTRY_TYPE_TEXT } from './helper.defaults.js';
 
 function jdFontlistEntryDirective () {
   return {

@@ -4,6 +4,8 @@
 /* global FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_TEXT */
 import template from '../partials/fontlist.html';
 var NAME_JDFONTLIST = 'jdFontlist';
+import { PAGE_SIZE_DEFAULT, DIRECTION_PREVIOUS, DIRECTION_NEXT, KEY_DOWN, KEY_UP, FONTLIST_ENTRY_TYPE_FONT, KEY_RIGHT, KEY_LEFT, SCROLL_BUFFER, OPEN_EVENT, CLOSE_EVENT,
+FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_TEXT, NAME_FONTSSERVICE } from './helper.defaults.js';
 
 function jdFontlistController($scope, $rootScope, $filter, fontsService, $element, $document, jdfsCuratedFonts) {
 /* jshint maxparams: 3 */

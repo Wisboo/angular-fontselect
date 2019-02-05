@@ -158,3 +158,55 @@
   padding: 0;
   margin: .2em 0;
 }
+.font-selector {
+  width: 100%;
+}
+.font-selector .font-selector-button,
+.font-selector .font-selector-search {
+  outline: 0;
+  cursor: pointer;
+  background-color: #FFF;
+  border: 1px solid #D4D8E1;
+  border-radius: 5px;
+  text-align: left;
+  padding: 0 15px;
+}
+.font-selector .font-selector-button .font-selector__care,
+.font-selector .font-selector-search .font-selector__care {
+  color: #B3BAC9;
+  font-size: 6px;
+  margin-top: 6px;
+  float: right;
+}
+.font-selector .font-selector-search {
+  cursor: text;
+  border-color: #697284;
+}
+.font-selector .font-selector-list-container {
+  width: 100%;
+  background-color: #FFF;
+  border: 1px solid #D4D8E1;
+  margin-top: 10px;
+  max-height: 250px;
+  overflow: auto;
+  padding: 5px 0 0;
+  border-radius: 5px;
+}
+.font-selector .font-selector-list-container .font-selector-list {
+  width: 100%;
+  background-color: #FFF;
+}
+.font-selector .font-selector-list-container .font-selector-list .font-selector-item .jdfs-fontlist-font {
+  cursor: pointer;
+  border: 0;
+  padding: 15px;
+  font-weight: normal;
+}
+.font-selector .font-selector-list-container .font-selector-list .font-selector-item .jdfs-fontlist-font.jdfs-highlight {
+  background-color: #4A90E2;
+  color: #FFF;
+}
+.font-selector .font-selector-list-container .font-selector-list .font-selector-item .jdfs-fontlist-font:hover {
+  background-color: #F7F7F9;
+  color: #697284;
+}

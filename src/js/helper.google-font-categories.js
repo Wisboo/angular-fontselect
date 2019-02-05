@@ -3,6 +3,8 @@
 /* jshint unused: false, indent: 4 */
 
 /** @const */
+import { CATEGORY_HANDWRITING, CATEGORY_SANS_SERIF, CATEGORY_DISPLAY, CATEGORY_SERIF, CATEGORY_OTHER } from './helper.defaults.js';
+
 var GOOGLE_FONT_CATEGORIES = {};
 GOOGLE_FONT_CATEGORIES[CATEGORY_HANDWRITING] = [
     'Patrick Hand SC',
@@ -707,3 +709,5 @@ GOOGLE_FONT_CATEGORIES[CATEGORY_OTHER] = [
     'Suwannaphum',
     'Taprom'
 ];
+
+export { GOOGLE_FONT_CATEGORIES };

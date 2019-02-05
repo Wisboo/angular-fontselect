@@ -1,4 +1,6 @@
 /* global NAME_FONTSSERVICE */
+import { NAME_FONTSSERVICE } from './helper.defaults.js';
+
 export function jdfsCuratedFontsProvider() {
   var curatedFontKeys = [];
 

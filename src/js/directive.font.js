@@ -1,5 +1,6 @@
 /* global NAME_FONTSSERVICE */
 import template from '../partials/font.html';
+import { NAME_FONTSSERVICE } from './helper.defaults.js';
 
 function jdFontDirective (fontsService) {
   return {
