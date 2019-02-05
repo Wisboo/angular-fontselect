@@ -2,7 +2,7 @@
 import 'angular';
 import '../less/fontselect.less';
 import { jdFontselectConfig } from './helper.defaults.js';
-import { FontsService } from './service.fonts.js';
+import { NAME_FONTSSERVICE, FontsService } from './service.fonts.js';
 import { jdfsCuratedFontsProvider } from './provider.curatedFonts.js';
 import './helper.functions.js';
 import './helper.google-font-categories.js';
