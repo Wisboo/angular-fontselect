@@ -404,7 +404,7 @@ function _objLength(object) {
   return size;
 }
 
-function _isDescendant$1(parent, child) {
+function _isDescendant(parent, child) {
   var node = child;
   while (node !== null) {
     if (node === parent) {
@@ -2067,7 +2067,7 @@ function jdMetaDirective () {
   };
 }
 
-var template$1 = "<div class=\"jdfs-main font-selector\" id=\"jd-fontselect-{{suffixedId}}\"> <button class=\"jdfs-toggle-search font-selector-button\" ng-click=\"toggleSearch($event)\" id=\"jd-fontselect-{{suffixedId}}-toggle-search\" ng-show=\"!searching\"> <span class=\"jdfs-font-name\" style=\"font-family: {{current.font.stack}};\" ng-show=\"current.font.name\">{{current.font.name}}</span> <span class=\"jdfs-font-name\" ng-hide=\"current.font.name\" style=\"font-family: {{current.font.stack}};\" translate=\"{{selectText}}\"></span> <i class=\"icon-Flecha-Single-Down font-selector__care\"></i> </button> <input class=\"jdfs-search.font-selector-search\" type=\"text\" translate translate-attr-placeholder=\"{{placeHolderText}}\" name=\"jdfs-{{id}}-search\" ng-show=\"searching\" ng-model=\"current.search\"> <div class=\"jdfs-window full-width font-selector-list-container\" ng-if=\"active\"> <jd-fontlist fsid=\"id\" text=\"text\" meta=\"meta\" current=\"current\" fonts=\"fonts\"></jd-fontlist> </div> </div> ";
+var template$1 = "<div class=\"jdfs-main font-selector\" id=\"jd-fontselect-{{suffixedId}}\"> <button class=\"jdfs-toggle-search font-selector-button\" ng-click=\"toggleSearch($event)\" id=\"jd-fontselect-{{suffixedId}}-toggle-search\" ng-show=\"!searching\"> <span class=\"jdfs-font-name\" style=\"font-family: {{current.font.stack}};\" ng-show=\"current.font.name\">{{current.font.name}}</span> <span class=\"jdfs-font-name\" ng-hide=\"current.font.name\" style=\"font-family: {{current.font.stack}};\" translate=\"{{selectText}}\"></span> <i class=\"icon-Flecha-Single-Down font-selector__care\"></i> </button> <input class=\"jdfs-search font-selector-search\" type=\"text\" translate translate-attr-placeholder=\"{{placeHolderText}}\" name=\"jdfs-{{id}}-search\" ng-show=\"searching\" ng-model=\"current.search\"> <div class=\"jdfs-window full-width font-selector-list-container\" ng-if=\"active\"> <jd-fontlist fsid=\"id\" text=\"text\" meta=\"meta\" current=\"current\" fonts=\"fonts\"></jd-fontlist> </div> </div> ";
 
 /* global STATE_DEFAULTS, NAME_FONTSSERVICE, SORT_ATTRIBUTES, TEXT_DEFAULTS */
 var id = 1;
@@ -2273,7 +2273,7 @@ function jdFontSelectDirective (fontsService) {
           $scope.name = '';
           $scope.stack = VALUE_NO_FONT_STACK;
         }
-        close();
+        $scope.toggle();
       };
 
       $scope.toggleSettings = function() {
@@ -2503,7 +2503,7 @@ function jdFontlistController($scope, $rootScope, $filter, fontsService, $elemen
       return;
     }
 
-    if (_isDescendant$1($element[0], event.target)) {
+    if (_isDescendant($element[0], event.target)) {
       event.preventDefault();
       event.stopPropagation();
 

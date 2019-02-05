@@ -7,7 +7,7 @@
     <span class="jdfs-font-name" ng-hide="current.font.name" style='font-family: {{current.font.stack}};' translate="{{selectText}}"></span>
     <i class="icon-Flecha-Single-Down font-selector__care"></i>
 	</button>
-  <input class="jdfs-search.font-selector-search" type='text' translate translate-attr-placeholder='{{placeHolderText}}' name='jdfs-{{id}}-search' ng-show='searching' ng-model='current.search'></input>
+  <input class="jdfs-search font-selector-search" type='text' translate translate-attr-placeholder='{{placeHolderText}}' name='jdfs-{{id}}-search' ng-show='searching' ng-model='current.search'></input>
   <div class="jdfs-window full-width font-selector-list-container" ng-if='active'>
     <jd-fontlist fsid='id' text='text' meta='meta' current='current' fonts='fonts'></jd-fontlist>
 	</div>
