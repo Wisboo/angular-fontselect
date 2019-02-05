@@ -2273,8 +2273,9 @@ function jdFontSelectDirective (fontsService) {
           $scope.name = '';
           $scope.stack = VALUE_NO_FONT_STACK;
         }
-        $scope.toggle();
-      };
+        if ($scope.active) {
+          $scope.toggle();
+        }      };
 
       $scope.toggleSettings = function() {
         $scope.settingsActive = true;
