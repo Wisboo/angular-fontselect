@@ -21,7 +21,7 @@ function jdFontSelectDirective (fontsService) {
       idSuffix: '@?'
     },
     restrict: 'E',
-    template: 'template',
+    template: template,
     replace: true,
 
     controller: [

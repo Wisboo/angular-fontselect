@@ -2067,6 +2067,8 @@ function jdMetaDirective () {
   };
 }
 
+var template$1 = "<div class=\"jdfs-main font-selector\" id=\"jd-fontselect-{{suffixedId}}\"> <button class=\"jdfs-toggle-search font-selector-button\" ng-click=\"toggleSearch($event)\" id=\"jd-fontselect-{{suffixedId}}-toggle-search\" ng-show=\"!searching\"> <span class=\"jdfs-font-name\" style=\"font-family: {{current.font.stack}};\" ng-show=\"current.font.name\">{{current.font.name}}</span> <span class=\"jdfs-font-name\" ng-hide=\"current.font.name\" style=\"font-family: {{current.font.stack}};\" translate=\"{{selectText}}\"></span> <i class=\"icon-Flecha-Single-Down font-selector__care\"></i> </button> <input class=\"jdfs-search.font-selector-search\" type=\"text\" translate translate-attr-placeholder=\"{{placeHolderText}}\" name=\"jdfs-{{id}}-search\" ng-show=\"searching\" ng-model=\"current.search\"> <div class=\"jdfs-window full-width font-selector-list-container\" ng-if=\"active\"> <jd-fontlist fsid=\"id\" text=\"text\" meta=\"meta\" current=\"current\" fonts=\"fonts\"></jd-fontlist> </div> </div> ";
+
 /* global STATE_DEFAULTS, NAME_FONTSSERVICE, SORT_ATTRIBUTES, TEXT_DEFAULTS */
 var id = 1;
 
@@ -2085,7 +2087,7 @@ function jdFontSelectDirective (fontsService) {
       idSuffix: '@?'
     },
     restrict: 'E',
-    template: 'template',
+    template: template$1,
     replace: true,
 
     controller: [
@@ -2372,7 +2374,7 @@ function jdFontSelectDirective (fontsService) {
   };
 }jdFontSelectDirective.$inject = [NAME_FONTSSERVICE];
 
-var template$1 = "<div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\"> <ul class=\"jdfs-fontlist font-selector-list\"> <jd-fontlist-entry class=\"font-selector-item\" current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | limitTo:50 track by $index\"></jd-fontlist-entry> </ul> </div> <!-- <div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\">\n\t\t<button\n\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-prev\"\n\t\t\tng-click=\"paginate('prev', $event)\"\n\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('prev')}\"\n\t\t\tng-disabled=\"!paginationButtonActive('prev')\"\n\t\t>{{text.page.prev}}</button>\n\t\t<ul class='jdfs-fontlist'>\n\t\t\t<jd-fontlist-entry current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | startFrom: page.current * page.size | limitTo: page.size\"></jd-fontlist-entry>\n\t\t</ul>\n\n\t\t<button\n\t\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-next\"\n\t\t\t\tng-click=\"paginate('next', $event)\"\n\t\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('next')}\"\n\t\t\t\tng-disabled=\"!paginationButtonActive('next')\"\n\t\t\t>{{text.page.next}}\n\t\t</button>\n</div> --> ";
+var template$2 = "<div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\"> <ul class=\"jdfs-fontlist font-selector-list\"> <jd-fontlist-entry class=\"font-selector-item\" current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | limitTo:50 track by $index\"></jd-fontlist-entry> </ul> </div> <!-- <div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\">\n\t\t<button\n\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-prev\"\n\t\t\tng-click=\"paginate('prev', $event)\"\n\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('prev')}\"\n\t\t\tng-disabled=\"!paginationButtonActive('prev')\"\n\t\t>{{text.page.prev}}</button>\n\t\t<ul class='jdfs-fontlist'>\n\t\t\t<jd-fontlist-entry current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | startFrom: page.current * page.size | limitTo: page.size\"></jd-fontlist-entry>\n\t\t</ul>\n\n\t\t<button\n\t\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-next\"\n\t\t\t\tng-click=\"paginate('next', $event)\"\n\t\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('next')}\"\n\t\t\t\tng-disabled=\"!paginationButtonActive('next')\"\n\t\t\t>{{text.page.next}}\n\t\t</button>\n</div> --> ";
 
 /* global NAME_CONTROLLER, DIRECTION_NEXT, DIRECTION_PREVIOUS, KEY_DOWN */
 var NAME_JDFONTLIST = 'jdFontlist';
@@ -2905,13 +2907,13 @@ function jdFontlistDirective () {
       text: '='
     },
     restrict: 'E',
-    template: template$1,
+    template: template$2,
     replace: true,
     controller: jdFontlistController
   };
 }
 
-var template$2 = "<ng-switch on=\"entry.type\"> <li ng-switch-when=\"FONT\"> <jd-font current=\"current\" font=\"entry.content\"></jd-font> </li> <li ng-switch-when=\"TEXT\"> <div class=\"jdfs-fontlist-text\">{{entry.content}}</div> </li> </ng-switch> ";
+var template$3 = "<ng-switch on=\"entry.type\"> <li ng-switch-when=\"FONT\"> <jd-font current=\"current\" font=\"entry.content\"></jd-font> </li> <li ng-switch-when=\"TEXT\"> <div class=\"jdfs-fontlist-text\">{{entry.content}}</div> </li> </ng-switch> ";
 
 /* global FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_FONT, FONTLIST_ENTRY_TYPE_TEXT */
 var NAME_JDFONTLIST_ENTRY = 'jdFontlistEntry';
@@ -2923,7 +2925,7 @@ function jdFontlistEntryDirective () {
       current: '='
     },
     restrict: 'E',
-    template: template$2,
+    template: template$3,
     replace: true,
     link: function($scope) {
       $scope.isHeadline = $scope.entry.type === FONTLIST_ENTRY_TYPE_HEADLINE;
@@ -2933,7 +2935,7 @@ function jdFontlistEntryDirective () {
   };
 }
 
-var template$3 = "<label class=\"jdfs-fontlist-font\" ng-class=\"{'jdfs-active jdfs-highlight': current.font.name == font.name}\" for=\"jdfs-{{id}}-font-{{font.key}}\" style=\"font-family: {{font.stack}};\"> <input type=\"radio\" ng-model=\"current.font\" ng-value=\"font\" name=\"jdfs-{{id}}-font\" id=\"jdfs-{{id}}-font-{{font.key}}\"> {{font.name}} </label> ";
+var template$4 = "<label class=\"jdfs-fontlist-font\" ng-class=\"{'jdfs-active jdfs-highlight': current.font.name == font.name}\" for=\"jdfs-{{id}}-font-{{font.key}}\" style=\"font-family: {{font.stack}};\"> <input type=\"radio\" ng-model=\"current.font\" ng-value=\"font\" name=\"jdfs-{{id}}-font\" id=\"jdfs-{{id}}-font-{{font.key}}\"> {{font.name}} </label> ";
 
 /* global NAME_FONTSSERVICE */
 
@@ -2943,7 +2945,7 @@ function jdFontDirective (fontsService) {
       font: '=',
       current: '='
     },
-    template: template$3,
+    template: template$4,
     restrict: 'E',
     replace: true,
     controller: ['$scope', function($scope) {
@@ -2953,13 +2955,13 @@ function jdFontDirective (fontsService) {
 }
 jdFontDirective.$inject = [NAME_FONTSSERVICE];
 
-var template$4 = "<link ng-href=\"{{url}}\" ng-repeat=\"url in urls\"> ";
+var template$5 = "<link ng-href=\"{{url}}\" ng-repeat=\"url in urls\"> ";
 
 /* global NAME_FONTSSERVICE */
 
 function jdFontSelectCurrentHrefDirective (fontsService) {
   return {
-    template: template$4,
+    template: template$5,
     restrict: 'A',
     replace: true,
     controller: ['$scope', function($scope) {
