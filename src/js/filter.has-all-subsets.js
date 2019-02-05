@@ -30,4 +30,4 @@
       return angular.isObject(font) && hasAllSubsets(font);
     });
   };
-};
+}

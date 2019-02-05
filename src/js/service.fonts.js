@@ -4,6 +4,7 @@
 /* global STATE_DEFAULTS, CATEGORY_OTHER, CATEGORY_OBJECTS  */
 
 import { DEFAULT_WEBSAFE_FONTS, PROVIDER_WEBSAFE, PROVIDER_GOOGLE, REQUIRED_FONT_OBJECT_KEYS, NAME_FONTSSERVICE, DEFAULT_CATEGORIES, URL_GOOGLE_FONTS_CSS, VARIANT_PRIORITY, SUBSET_PRIORITY, METHOD_GET, URL_GOOGLE_FONTS_API, STATE_DEFAULTS, CATEGORY_OTHER, CATEGORY_OBJECTS } from './helper.defaults.js';
+import { _createKey } from './helper.functions.js';
 import { GOOGLE_FONT_CATEGORIES } from './helper.google-font-categories.js';
 var _fontsServiceDeps = ['$http', '$q', 'jdFontselectConfig', '$filter', 'jdfsWebFont'];
 

@@ -2,6 +2,7 @@
 /* global KEY_ESCAPE, VALUE_NO_FONT_STACK, CLOSE_EVENT, OPEN_EVENT, DO_CLOSE_EVENT */
 /* jshint maxparams: 5 */
 import template from '../partials/fontselect.html';
+import { _createName, _objLength } from './helper.functions.js';
 import { STATE_DEFAULTS, NAME_FONTSSERVICE, SORT_ATTRIBUTES, TEXT_DEFAULTS, KEY_ESCAPE, VALUE_NO_FONT_STACK, CLOSE_EVENT, OPEN_EVENT, DO_CLOSE_EVENT } from './helper.defaults.js';
 var id = 1;
 

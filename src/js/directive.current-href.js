@@ -12,5 +12,5 @@ function jdFontSelectCurrentHrefDirective (fontsService) {
     }]
   };
 }
-jdFontselectCurrentHref.$inject = [NAME_FONTSSERVICE];
+jdFontSelectCurrentHrefDirective.$inject = [NAME_FONTSSERVICE];
 export { jdFontSelectCurrentHrefDirective };

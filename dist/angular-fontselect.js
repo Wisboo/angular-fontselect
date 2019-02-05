@@ -378,6 +378,43 @@ var FONTLIST_ENTRY_TYPE_HEADLINE = 'HEADLINE';
 var FONTLIST_ENTRY_TYPE_FONT = 'FONT';
 var FONTLIST_ENTRY_TYPE_TEXT = 'TEXT';
 
+/* jshint unused: false */
+function _createKey(name) {
+  return name.toLowerCase().replace(/[^a-z]+/g, '-');
+}
+
+function _createName(key) {
+  var words = key.replace('-', ' ').split(' ');
+
+  for (var i = 0, l = words.length; i < l; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+
+  return words.join(' ');
+}
+
+function _objLength(object) {
+  var size = 0, key;
+  for (key in object) {
+    if (object.hasOwnProperty(key)) {
+      size++;
+    }
+  }
+
+  return size;
+}
+
+function _isDescendant$1(parent, child) {
+  var node = child;
+  while (node !== null) {
+    if (node === parent) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+}
+
 /* globals CATEGORY_HANDWRITING, CATEGORY_SANS_SERIF, CATEGORY_DISPLAY, CATEGORY_SERIF */
 
 var GOOGLE_FONT_CATEGORIES = {};
@@ -1790,8 +1827,6 @@ function jdfsCuratedFontsProvider() {
   }];
 }
 
-/* jshint unused: false */
-
 /* From: http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/ */
 function startFromFilter () {
   return function(input, start) {
@@ -2466,7 +2501,7 @@ function jdFontlistController($scope, $rootScope, $filter, fontsService, $elemen
       return;
     }
 
-    if (_isDescendant($element[0], event.target)) {
+    if (_isDescendant$1($element[0], event.target)) {
       event.preventDefault();
       event.stopPropagation();
 
@@ -2932,7 +2967,7 @@ function jdFontSelectCurrentHrefDirective (fontsService) {
     }]
   };
 }
-jdFontselectCurrentHref.$inject = [NAME_FONTSSERVICE$1];
+jdFontSelectCurrentHrefDirective.$inject = [NAME_FONTSSERVICE$1];
 
 /* jshint unused: false, -W079 */
 

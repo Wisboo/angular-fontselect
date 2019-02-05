@@ -34,3 +34,5 @@ function _isDescendant(parent, child) {
   }
   return false;
 }
+
+export { _createKey, _createName, _objLength, _isDescendant };
