@@ -1,5 +1,5 @@
 /* global NAME_FONTSSERVICE */
-fontselectModule.provider('jdfsCuratedFonts', function jdfsCuratedFontsProvider() {
+export function jdfsCuratedFontsProvider() {
   var curatedFontKeys = [];
 
   this.setCuratedFontKeys = function (curatedKeys) {
@@ -17,4 +17,4 @@ fontselectModule.provider('jdfsCuratedFonts', function jdfsCuratedFontsProvider(
   this.$get = [NAME_FONTSSERVICE, function jdfsCuratedFontsFactory(fontService) {
     return getCuratedFontObjects(fontService.getAllFonts(), curatedFontKeys);
   }];
-});
+};

@@ -1,14 +1,15 @@
 /* global FONTLIST_ENTRY_TYPE_HEADLINE, FONTLIST_ENTRY_TYPE_FONT, FONTLIST_ENTRY_TYPE_TEXT */
 var NAME_JDFONTLIST_ENTRY = 'jdFontlistEntry';
+import template from '../partials/fontlist-entry.html';
 
-fontselectModule.directive(NAME_JDFONTLIST_ENTRY, function() {
+function jdFontlistEntryDirective () {
   return {
     scope: {
       entry: '=',
       current: '='
     },
     restrict: 'E',
-    templateUrl: 'fontlist-entry.html',
+    template: template,
     replace: true,
     link: function($scope) {
       $scope.isHeadline = $scope.entry.type === FONTLIST_ENTRY_TYPE_HEADLINE;
@@ -16,4 +17,5 @@ fontselectModule.directive(NAME_JDFONTLIST_ENTRY, function() {
       $scope.isText = $scope.entry.type === FONTLIST_ENTRY_TYPE_TEXT;
     }
   };
-});
+};
+export { jdFontlistEntryDirective, NAME_JDFONTLIST_ENTRY };

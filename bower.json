@@ -30,8 +30,8 @@
   "devDependencies": {
     "webfontloader": "1.5.8",
     "lesshat": "3.0.2",
-    "jquery": "2.1.1",
-    "angular-mocks": "^1.2.25 <= 1.4.1",
+    "jquery": "*",
+    "angular-mocks": ">=1.6.8",
     "jasmine-moar-matchers": "~0.0.3"
   },
   "ignore": [
@@ -45,7 +45,7 @@
     "package.json"
   ],
   "dependencies": {
-    "angular": "^1.2.25 <= 1.4.1",
+    "angular": ">=1.6.8",
     "weakmap-polyfill": "^1.0.1"
   }
 }

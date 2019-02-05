@@ -1,4 +1,18 @@
-<div class="jdfs-main" id="jd-fontselect-{{suffixedId}}">
+<div class="jdfs-main font-selector" id="jd-fontselect-{{suffixedId}}">
+  <button class="jdfs-toggle-search font-selector-button"
+    ng-click="toggleSearch($event)"
+    id="jd-fontselect-{{suffixedId}}-toggle-search"
+    ng-show="!searching">
+    <span class="jdfs-font-name" style="font-family: {{current.font.stack}};" ng-show="current.font.name">{{current.font.name}}</span>
+    <span class="jdfs-font-name" ng-hide="current.font.name" style='font-family: {{current.font.stack}};' translate="{{selectText}}"></span>
+    <i class="icon-Flecha-Single-Down font-selector__care"></i>
+	</button>
+  <input class="jdfs-search.font-selector-search" type='text' translate translate-attr-placeholder='{{placeHolderText}}' name='jdfs-{{id}}-search' ng-show='searching' ng-model='current.search'></input>
+  <div class="jdfs-window full-width font-selector-list-container" ng-if='active'>
+    <jd-fontlist fsid='id' text='text' meta='meta' current='current' fonts='fonts'></jd-fontlist>
+	</div>
+</div>
+<!-- <div class="jdfs-main" id="jd-fontselect-{{suffixedId}}">
 
 		<button
 			ng-click="toggleSearch($event)"
@@ -50,7 +64,7 @@
 
 			<!-- <select ng-model="current.sort.attr" ng-options="text.sort[a.key] for a in sortAttrs"></select> -->
 			<!-- <button ng-click="reverseSort()">{{current.sort.direction ? text.sortdir.desc : text.sortdir.asc}}</button> -->
-		<jd-fontlist
+		<!-- <jd-fontlist
 			fsid="id"
 			text="text"
 			meta="meta"
@@ -123,4 +137,4 @@
 			</span>
 		</button>
 	</div>
-</div>
+</div> -->

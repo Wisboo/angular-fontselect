@@ -1,4 +1,4 @@
-fontselectModule.factory('jdfsWebFont', function() {
+export function jdfsWebFontFactory () {
   var jdfsWebFont = {
     getFontLoader: function() {
       if (typeof window.WebFont === 'undefined') {
@@ -11,4 +11,4 @@ fontselectModule.factory('jdfsWebFont', function() {
   };
 
   return jdfsWebFont;
-});
+};

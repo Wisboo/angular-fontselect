@@ -1,5 +1,5 @@
 /* From: http://tech.small-improvements.com/2013/09/10/angularjs-performance-with-large-lists/ */
-fontselectModule.filter('startFrom', function() {
+export function startFromFilter () {
   return function(input, start) {
     if (!angular.isArray(input)) {
       return input;
@@ -7,4 +7,4 @@ fontselectModule.filter('startFrom', function() {
 
     return input.slice(start);
   };
-});
+}

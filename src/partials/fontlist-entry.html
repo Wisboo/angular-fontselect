@@ -1,5 +1,8 @@
 <ng-switch on="entry.type">
-  <li ng-switch-when="FONT"><jd-font current="current" font="entry.content"></jd-font></li>
-  <li ng-switch-when="HEADLINE" class="jdfs-fontlist-headline">{{entry.content}}</li>
-  <li ng-switch-when="TEXT" class="jdfs-fontlist-text">{{entry.content}}</li>
+  <li ng-switch-when="FONT">
+    <jd-font current="current" font="entry.content"></jd-font>
+  </li>
+  <li ng-switch-when="TEXT">
+    <div class="jdfs-fontlist-text">{{entry.content}}</div>
+  </li>
 </ng-switch>

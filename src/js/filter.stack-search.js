@@ -4,7 +4,7 @@
  * @author Tim Sebastian <tim.sebastian@jimdo.com>
  * @author Hannes Diercks <hannes.diercks@jimdo.com>
  */
-fontselectModule.filter('stackSearch', function() {
+export function stackSeachFilter () {
   var listCache = {};
 
   function createInputId(input) {
@@ -70,4 +70,4 @@ fontselectModule.filter('stackSearch', function() {
   };
 
   return stackSearchFilter;
-});
+}

@@ -1,4 +1,4 @@
-@import url('../../bower_components/lesshat/build/lesshat.less');
+@import url('../../node_modules/lesshat/lesshat.less');
 
 @tabBg:            #eee;
 @activeTab:           #939393;
@@ -174,4 +174,73 @@
 .jdfs-settings-headline{
   padding: 0;
   margin: .2em 0;
+}
+
+@white: #FFF;
+@isabelline: #D4D8E1;
+@lavender-gray: #B3BAC9;
+@brown-gray: #697284;
+@box-blue: #4A90E2;
+@bluish-gray: #F7F7F9;
+
+.font-selector {
+  width: 100%;
+
+  .font-selector-button,
+  .font-selector-search {
+    outline: 0;
+    cursor: pointer;
+    background-color: @white;
+    border: 1px solid @isabelline;
+    border-radius: 5px;
+    text-align: left;
+    padding: 0 15px;
+    .font-selector__care {
+      color: @lavender-gray;
+      font-size: 6px;
+      margin-top: 6px;
+      float: right;
+    }
+  }
+
+  .font-selector-search {
+    cursor: text;
+    border-color: @brown-gray;
+  }
+
+  .font-selector-list-container {
+    width: 100%;
+    background-color: @white;
+    border: 1px solid @isabelline;
+    margin-top: 10px;
+    max-height: 250px;
+    overflow: auto;
+    padding: 5px 0 0;
+    border-radius: 5px;
+
+    .font-selector-list {
+      width: 100%;
+      background-color: @white;
+
+      .font-selector-item {
+
+        .jdfs-fontlist-font {
+          cursor: pointer;
+          border: 0;
+          padding: 15px;
+          font-weight: normal;
+
+          &.jdfs-highlight {
+            background-color: @box-blue;
+            color: @white;
+          }
+
+          &:hover {
+            background-color: @bluish-gray;
+            color: @brown-gray;
+          }
+        }
+      }
+    }
+  }
 }

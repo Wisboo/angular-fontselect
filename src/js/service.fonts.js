@@ -619,7 +619,7 @@ FontsService.prototype = {
       var ready = amount - 1;
       var fonts = [];
 
-      angular.forEach(response.items, function(font, i) {
+      angular.forEach(response.data.items, function(font, i) {
         var category = self._getGoogleFontCat(font.family);
 
         fonts.push(self.add({
@@ -685,4 +685,4 @@ FontsService.prototype = {
   }
 };
 
-fontselectModule.service(NAME_FONTSSERVICE, FontsService);
+export { FontsService };

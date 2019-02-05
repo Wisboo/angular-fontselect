@@ -1,9 +1,12 @@
+import template from '../partials/meta.html';
 var NAME_JDMETA = 'jdMeta';
 
-fontselectModule.directive(NAME_JDMETA, function() {
+function jdMetaDirective () {
   return {
     restrict: 'E',
-    templateUrl: 'meta.html',
+    template: template,
     replace: true
   };
-});
+};
+
+export { NAME_JDMETA, jdMetaDirective };

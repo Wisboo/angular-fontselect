@@ -1,4 +1,4 @@
-fontselectModule.filter('hasAllSubsets', function() {
+ export function hasAllSubsetsFilter () {
   return function(input, subsets) {
     if (!angular.isArray(input)) {
       return input;
@@ -30,4 +30,4 @@ fontselectModule.filter('hasAllSubsets', function() {
       return angular.isObject(font) && hasAllSubsets(font);
     });
   };
-});
+};

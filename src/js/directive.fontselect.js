@@ -1,9 +1,10 @@
 /* global STATE_DEFAULTS, NAME_FONTSSERVICE, SORT_ATTRIBUTES, TEXT_DEFAULTS */
 /* global KEY_ESCAPE, VALUE_NO_FONT_STACK, CLOSE_EVENT, OPEN_EVENT, DO_CLOSE_EVENT */
 /* jshint maxparams: 5 */
+import template from '../partials/fontselect.html';
 var id = 1;
 
-fontselectModule.directive('jdFontselect', [NAME_FONTSSERVICE, function(fontsService) {
+function jdFontSelectDirective (fontsService) {
   return {
     scope: {
       current: '=?state',
@@ -18,7 +19,7 @@ fontselectModule.directive('jdFontselect', [NAME_FONTSSERVICE, function(fontsSer
       idSuffix: '@?'
     },
     restrict: 'E',
-    templateUrl: 'fontselect.html',
+    template: 'template',
     replace: true,
 
     controller: [
@@ -204,6 +205,7 @@ fontselectModule.directive('jdFontselect', [NAME_FONTSSERVICE, function(fontsSer
           $scope.name = '';
           $scope.stack = VALUE_NO_FONT_STACK;
         }
+        close();
       };
 
       $scope.toggleSettings = function() {
@@ -302,4 +304,6 @@ fontselectModule.directive('jdFontselect', [NAME_FONTSSERVICE, function(fontsSer
       });
     }]
   };
-}]);
+};
+jdFontSelectDirective.$inject = [NAME_FONTSSERVICE];
+export { jdFontSelectDirective };

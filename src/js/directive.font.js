@@ -1,15 +1,19 @@
 /* global NAME_FONTSSERVICE */
-fontselectModule.directive('jdFont', [NAME_FONTSSERVICE, function(fontsService) {
+import template from '../partials/font.html';
+
+function jdFontDirective (fontsService) {
   return {
     scope: {
       font: '=',
       current: '='
     },
-    templateUrl: 'font.html',
+    template: template,
     restrict: 'E',
     replace: true,
     controller: ['$scope', function($scope) {
       fontsService.load($scope.font);
     }]
   };
-}]);
+}
+jdFontDirective.$inject = [NAME_FONTSSERVICE];
+export { jdFontDirective };

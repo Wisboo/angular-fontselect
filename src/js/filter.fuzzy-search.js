@@ -8,7 +8,7 @@
  * @author Tim Sebastian <tim.sebastian@jimdo.com>
  * @author Hannes Diercks <hannes.diercks@jimdo.com>
  */
-fontselectModule.filter('fuzzySearch', function() {
+export function fuzzySearchFilter () {
   /** @const */
   var DEFAULTS = {
     teAmount: 0,
@@ -90,4 +90,4 @@ fontselectModule.filter('fuzzySearch', function() {
 
     return inputs;
   };
-});
+};

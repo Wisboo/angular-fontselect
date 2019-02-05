@@ -35,7 +35,6 @@ var DIR_PARTIALS = 'src/partials/';
 /** @const */
 var NAME_CONTROLLER = 'Controller';
 
-/** @const */
 var NAME_FONTSSERVICE = 'jdFontselectFonts';
 
 /** @const */

@@ -1,11 +1,15 @@
 /* global NAME_FONTSSERVICE */
-fontselectModule.directive('jdFontselectCurrentHref', [NAME_FONTSSERVICE, function(fontsService) {
+import template from '../partials/current-href.html';
+
+function jdFontSelectCurrentHrefDirective (fontsService) {
   return {
-    templateUrl: 'current-href.html',
+    template: template,
     restrict: 'A',
     replace: true,
     controller: ['$scope', function($scope) {
       $scope.urls = fontsService.getImports();
     }]
   };
-}]);
+}
+jdFontselectCurrentHref.$inject = [NAME_FONTSSERVICE];
+export { jdFontSelectCurrentHrefDirective };
