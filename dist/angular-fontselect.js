@@ -33,7 +33,7 @@ var CATEGORY_OTHER = 'other';
 /** @const */
 var PAGE_SIZE_DEFAULT = 10;
 
-var NAME_FONTSSERVICE$1 = 'jdFontselectFonts';
+var NAME_FONTSSERVICE = 'jdFontselectFonts';
 
 /** @const */
 var CLOSE_EVENT = 'jdFontselectEventClose';
@@ -1822,7 +1822,7 @@ function jdfsCuratedFontsProvider() {
     });
   }
 
-  this.$get = [NAME_FONTSSERVICE$1, function jdfsCuratedFontsFactory(fontService) {
+  this.$get = [NAME_FONTSSERVICE, function jdfsCuratedFontsFactory(fontService) {
     return getCuratedFontObjects(fontService.getAllFonts(), curatedFontKeys);
   }];
 }
@@ -2370,7 +2370,7 @@ function jdFontSelectDirective (fontsService) {
       });
     }]
   };
-}jdFontSelectDirective.$inject = [NAME_FONTSSERVICE$1];
+}jdFontSelectDirective.$inject = [NAME_FONTSSERVICE];
 
 var template$1 = "<div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\"> <ul class=\"jdfs-fontlist font-selector-list\"> <jd-fontlist-entry class=\"font-selector-item\" current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | limitTo:50 track by $index\"></jd-fontlist-entry> </ul> </div> <!-- <div class=\"jdfs-fontlistcon\" ng-class=\"{'jdfs-active': isActive()}\">\n\t\t<button\n\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-prev\"\n\t\t\tng-click=\"paginate('prev', $event)\"\n\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('prev')}\"\n\t\t\tng-disabled=\"!paginationButtonActive('prev')\"\n\t\t>{{text.page.prev}}</button>\n\t\t<ul class='jdfs-fontlist'>\n\t\t\t<jd-fontlist-entry current=\"current\" entry=\"entry\" ng-repeat=\"entry in getFontlistEntries() | startFrom: page.current * page.size | limitTo: page.size\"></jd-fontlist-entry>\n\t\t</ul>\n\n\t\t<button\n\t\t\t\tclass=\"jdfs-fontpagination jdfs-fontpagination-next\"\n\t\t\t\tng-click=\"paginate('next', $event)\"\n\t\t\t\tng-class=\"{'jdfs-disabled': !paginationButtonActive('next')}\"\n\t\t\t\tng-disabled=\"!paginationButtonActive('next')\"\n\t\t\t>{{text.page.next}}\n\t\t</button>\n</div> --> ";
 
@@ -2893,7 +2893,7 @@ function jdFontlistController($scope, $rootScope, $filter, fontsService, $elemen
     $scope.setCurrentPage(0);
   }
 }
-jdFontlistController.$inject = ['$scope', '$rootScope', '$filter', NAME_FONTSSERVICE$1, '$element', '$document', 'jdfsCuratedFonts'];
+jdFontlistController.$inject = ['$scope', '$rootScope', '$filter', NAME_FONTSSERVICE, '$element', '$document', 'jdfsCuratedFonts'];
 
 function jdFontlistDirective () {
   return {
@@ -2951,7 +2951,7 @@ function jdFontDirective (fontsService) {
     }]
   };
 }
-jdFontDirective.$inject = [NAME_FONTSSERVICE$1];
+jdFontDirective.$inject = [NAME_FONTSSERVICE];
 
 var template$4 = "<link ng-href=\"{{url}}\" ng-repeat=\"url in urls\"> ";
 
@@ -2967,7 +2967,7 @@ function jdFontSelectCurrentHrefDirective (fontsService) {
     }]
   };
 }
-jdFontSelectCurrentHrefDirective.$inject = [NAME_FONTSSERVICE$1];
+jdFontSelectCurrentHrefDirective.$inject = [NAME_FONTSSERVICE];
 
 /* jshint unused: false, -W079 */
 
